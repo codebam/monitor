@@ -22,7 +22,7 @@ async function getActiveHosts() {
   try {
     // 1. Run the nmap scan
     console.log(`Scanning ${SCAN_TARGET}...`);
-    await execPromise(`nix run nixpkgs#nmap -- -sn -n -oX ${XML_FILE} ${SCAN_TARGET}`);
+    await execPromise(`run0 nix run nixpkgs#nmap -- -sn -n -oX ${XML_FILE} ${SCAN_TARGET}`);
 
     // 2. Read the XML file
     const xmlData = await fs.readFile(XML_FILE, 'utf8');
